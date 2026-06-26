@@ -1,11 +1,25 @@
 {
   "name": "Siddur",
   "short_name": "Siddur",
+  "description": "Offline Siddur reader with page turns, search, saved texts, and daily prayer flow.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#050505",
-  "theme_color": "#050505",
-  "icons": []
+  "background_color": "#060606",
+  "theme_color": "#060606",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
 }

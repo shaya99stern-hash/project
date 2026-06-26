@@ -3,103 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#050505" />
+    <meta name="theme-color" content="#060606" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Siddur" />
+    <meta name="description" content="A fast offline Siddur reader with page turns, search, saved texts, and daily prayer flow." />
     <title>Siddur</title>
     <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/icon.svg" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <div class="app-shell">
       <header class="top-bar" aria-label="App header">
-        <button class="icon-button" aria-label="Open menu">
+        <button class="icon-button" id="menuButton" aria-label="Open settings" type="button">
           <span></span><span></span>
         </button>
         <div class="brand-lockup">
           <div class="brand">SIDDUR</div>
           <div class="powered">Powered by NaviOS</div>
         </div>
-        <button class="profile-button" aria-label="Profile">S</button>
+        <button class="profile-button" id="profileButton" aria-label="Open profile" type="button">S</button>
       </header>
 
-      <main class="content">
-        <section class="hero-card">
-          <div class="eyebrow">Daily tefillah</div>
-          <h1>Good morning, Shaya.</h1>
-          <p>A clean iPhone-first shell for prayer, learning, saved texts, and future Sefaria-powered sources.</p>
-        </section>
-
-        <section class="search-card" aria-label="Search prayer texts">
-          <span class="search-icon">⌕</span>
-          <input type="search" placeholder="Search siddur, tehillim, parsha…" />
-        </section>
-
-        <section class="quick-grid" aria-label="Main sections">
-          <button class="quick-card">
-            <span class="quick-icon">✦</span>
-            <span class="quick-title">Siddur</span>
-            <span class="quick-subtitle">Prayer text shell</span>
-          </button>
-          <button class="quick-card">
-            <span class="quick-icon">☾</span>
-            <span class="quick-title">Tehillim</span>
-            <span class="quick-subtitle">Coming soon</span>
-          </button>
-          <button class="quick-card">
-            <span class="quick-icon">◌</span>
-            <span class="quick-title">Parsha</span>
-            <span class="quick-subtitle">Source-ready</span>
-          </button>
-          <button class="quick-card">
-            <span class="quick-icon">◇</span>
-            <span class="quick-title">Saved</span>
-            <span class="quick-subtitle">Bookmarks</span>
-          </button>
-        </section>
-
-        <section class="text-preview">
-          <div class="section-label">Today</div>
-          <article class="reader-card">
-            <div>
-              <h2>Shacharit</h2>
-              <p>Open the daily prayer flow. Text sources will be connected later.</p>
-            </div>
-            <button class="pill-button">Open</button>
-          </article>
-          <article class="reader-card muted">
-            <div>
-              <h2>Learning</h2>
-              <p>Reserved for Sefaria-linked Torah, Mishnah, Gemara, and halacha sources.</p>
-            </div>
-            <button class="pill-button ghost">Soon</button>
-          </article>
-        </section>
-      </main>
+      <main class="content" id="app" aria-live="polite"></main>
 
       <nav class="tab-bar" aria-label="Bottom navigation">
-        <button class="tab active">
-          <span>⌂</span>
+        <button class="tab active" data-tab="home" type="button">
+          <span aria-hidden="true">⌂</span>
           <strong>Home</strong>
         </button>
-        <button class="tab">
-          <span>☰</span>
+        <button class="tab" data-tab="texts" type="button">
+          <span aria-hidden="true">☰</span>
           <strong>Texts</strong>
         </button>
-        <button class="tab center-tab" aria-label="NaviOS AI">
-          <span>✦</span>
+        <button class="tab center-tab" data-tab="navi" aria-label="NaviOS guide" type="button">
+          <span aria-hidden="true">✦</span>
         </button>
-        <button class="tab">
-          <span>◷</span>
+        <button class="tab" data-tab="daily" type="button">
+          <span aria-hidden="true">◷</span>
           <strong>Daily</strong>
         </button>
-        <button class="tab">
-          <span>◇</span>
+        <button class="tab" data-tab="saved" type="button">
+          <span aria-hidden="true">◇</span>
           <strong>Saved</strong>
         </button>
       </nav>
     </div>
+
+    <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+    <aside class="settings-sheet" id="settingsSheet" aria-label="Reader settings" hidden>
+      <div class="sheet-handle"></div>
+      <div class="sheet-header">
+        <h2>Reader</h2>
+        <button class="plain-button" id="closeSheetButton" type="button">Done</button>
+      </div>
+      <label class="setting-row">
+        <span>Text size</span>
+        <input id="fontSizeInput" type="range" min="16" max="25" step="1" />
+      </label>
+      <label class="setting-row switch-row">
+        <span>Sepia paper</span>
+        <input id="themeToggle" type="checkbox" />
+      </label>
+      <button class="danger-button" id="clearProgressButton" type="button">Clear saved progress</button>
+    </aside>
 
     <script src="/app.js" type="module"></script>
   </body>

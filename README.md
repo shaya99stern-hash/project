@@ -1,15 +1,17 @@
-# Siddur PWA Shell
+# Siddur PWA
 
-A minimal iPhone-first PWA shell for a Siddur app.
+A mobile-first offline Siddur reader.
 
-## Current status
+## What works
 
-- Static PWA shell
-- Native-feeling dark iOS layout
-- Header, search, home cards, daily preview, and bottom tabs
-- Placeholder structure for Siddur, Tehillim, Parsha, Saved, and NaviOS AI
-- Basic service worker for install/offline shell behavior
+- Real navigation across Home, Texts, Daily, Saved, and NaviOS guide
+- Reader pages with tap, swipe, and keyboard page turns
+- Hebrew and English text blocks for core starter prayers
+- Search across titles, sections, Hebrew, and English text
+- Saved texts, recent progress, reader size, and sepia mode in local storage
+- Copy/share actions for the current page
+- Installable PWA manifest and offline service worker cache
 
-## Later source direction
+## Local preview
 
-Text/source integrations should be wired later through proper source APIs, such as Sefaria, with attribution and clean reader views. This first commit intentionally avoids loading live text data.
+Serve the folder with any static server and open the local URL. Service worker behavior requires HTTP or HTTPS.
