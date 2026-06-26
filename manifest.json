@@ -1,0 +1,11 @@
+{
+  "name": "Siddur",
+  "short_name": "Siddur",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": []
+}
