@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Siddur" />
+    <title>Siddur</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar" aria-label="App header">
+        <button class="icon-button" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+        <div class="brand-lockup">
+          <div class="brand">SIDDUR</div>
+          <div class="powered">Powered by NaviOS</div>
+        </div>
+        <button class="profile-button" aria-label="Profile">S</button>
+      </header>
+
+      <main class="content">
+        <section class="hero-card">
+          <div class="eyebrow">Daily tefillah</div>
+          <h1>Good morning, Shaya.</h1>
+          <p>A clean iPhone-first shell for prayer, learning, saved texts, and future Sefaria-powered sources.</p>
+        </section>
+
+        <section class="search-card" aria-label="Search prayer texts">
+          <span class="search-icon">⌕</span>
+          <input type="search" placeholder="Search siddur, tehillim, parsha…" />
+        </section>
+
+        <section class="quick-grid" aria-label="Main sections">
+          <button class="quick-card">
+            <span class="quick-icon">✦</span>
+            <span class="quick-title">Siddur</span>
+            <span class="quick-subtitle">Prayer text shell</span>
+          </button>
+          <button class="quick-card">
+            <span class="quick-icon">☾</span>
+            <span class="quick-title">Tehillim</span>
+            <span class="quick-subtitle">Coming soon</span>
+          </button>
+          <button class="quick-card">
+            <span class="quick-icon">◌</span>
+            <span class="quick-title">Parsha</span>
+            <span class="quick-subtitle">Source-ready</span>
+          </button>
+          <button class="quick-card">
+            <span class="quick-icon">◇</span>
+            <span class="quick-title">Saved</span>
+            <span class="quick-subtitle">Bookmarks</span>
+          </button>
+        </section>
+
+        <section class="text-preview">
+          <div class="section-label">Today</div>
+          <article class="reader-card">
+            <div>
+              <h2>Shacharit</h2>
+              <p>Open the daily prayer flow. Text sources will be connected later.</p>
+            </div>
+            <button class="pill-button">Open</button>
+          </article>
+          <article class="reader-card muted">
+            <div>
+              <h2>Learning</h2>
+              <p>Reserved for Sefaria-linked Torah, Mishnah, Gemara, and halacha sources.</p>
+            </div>
+            <button class="pill-button ghost">Soon</button>
+          </article>
+        </section>
+      </main>
+
+      <nav class="tab-bar" aria-label="Bottom navigation">
+        <button class="tab active">
+          <span>⌂</span>
+          <strong>Home</strong>
+        </button>
+        <button class="tab">
+          <span>☰</span>
+          <strong>Texts</strong>
+        </button>
+        <button class="tab center-tab" aria-label="NaviOS AI">
+          <span>✦</span>
+        </button>
+        <button class="tab">
+          <span>◷</span>
+          <strong>Daily</strong>
+        </button>
+        <button class="tab">
+          <span>◇</span>
+          <strong>Saved</strong>
+        </button>
+      </nav>
+    </div>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
